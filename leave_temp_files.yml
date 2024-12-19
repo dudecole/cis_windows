@@ -16,9 +16,3 @@
       name: EnableFontProviders
       data: 0
       type: dword
-    tags:
-      - level2-domaincontroller
-      - level2-memberserver
-      - rule_18.6.5.1
-      - patch
-      - dns
