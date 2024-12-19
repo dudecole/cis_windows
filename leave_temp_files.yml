@@ -1,0 +1,11 @@
+#playbook to test out the leave temp files around
+---
+- hosts: all
+  gather_facts: false
+
+  vars: 
+    keep_remote_files: true
+
+  tasks: 
+  - name: Run a Windows command
+    win_shell: echo "Debug Windows Task"
