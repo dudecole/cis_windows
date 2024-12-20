@@ -4,7 +4,7 @@
   gather_facts: false
 
   vars: 
-    keep_remote_files: true
+    ansible_winrm_shell: powershell
 
   tasks: 
   - name: Run a Windows command
