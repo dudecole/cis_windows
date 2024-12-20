@@ -4,6 +4,12 @@
   connection: local
 
   tasks:
+    - name: Upgrade pywinrm using pip
+      ansible.builtin.pip:
+        name: pywinrm
+        state: latest
+        executable: pip3
+        
     - name: Run pip command to get pywinrm version
       ansible.builtin.command: "pip3 show pywinrm"
       register: pywinrm_version
