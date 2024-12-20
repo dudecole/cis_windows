@@ -2,22 +2,6 @@
   gather_facts: false
 
   tasks:
-    - name: Upgrade pywinrm in the Python environment
-      ansible.builtin.pip:
-        name: pywinrm
-        state: latest
-        executable: /usr/bin/pip3
-      delegate_to: localhost
-
-    - name: Display pywinrm version
-      ansible.builtin.command: "/usr/bin/pip3 show pywinrm"
-      delegate_to: localhost
-      register: pywinrm_version
-
-    - name: Show updated pywinrm version
-      ansible.builtin.debug:
-        msg: "{{ pywinrm_version.stdout_lines }}"
-
     - name: Run a Windows command
       win_shell: echo "Debug Windows Task"
 
