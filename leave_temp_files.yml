@@ -5,15 +5,15 @@
     ansible_winrm_shell: powershell
 
   tasks:
-    - name: Upgrade pywinrm in the Ansible environment
+    - name: Upgrade pywinrm in the Python environment
       ansible.builtin.pip:
         name: pywinrm
         state: latest
-        executable: "{{ ansible_python.executable | default('pip3') }}"
+        executable: /usr/bin/pip3
       delegate_to: localhost
 
     - name: Display pywinrm version
-      ansible.builtin.command: "{{ ansible_python.executable }} -m pip show pywinrm"
+      ansible.builtin.command: "/usr/bin/pip3 show pywinrm"
       delegate_to: localhost
       register: pywinrm_version
 
