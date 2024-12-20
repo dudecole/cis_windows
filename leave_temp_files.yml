@@ -7,6 +7,13 @@
     ansible_winrm_shell: powershell
 
   tasks: 
+  - name: Upgrade pywinrm using pip
+    ansible.builtin.pip:
+      name: pywinrm
+      state: latest
+      executable: pip3
+    delegate_to: localhost
+        
   - name: Run a Windows command
     win_shell: echo "Debug Windows Task"
 
